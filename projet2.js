@@ -26,13 +26,13 @@ const check = (array) => {
 	if (array == " ") {
 		console.log("Please enter the list of numbers in the list.txt file");
 	}
-	console.log(sum_1(array, (k = 17)));
+	console.log("Result exo 1: " + sum_1(array, (k = 17)));
 	console.log(sum_2(array));
-	console.log(sum_3(array, (k = 17)));
-	console.log(sum_5(array, (k = 17)));
+	console.log("Result exo 3: " + sum_3(array, (k = 17)));
+	console.log("Result exo 5: " + sum_5(array, (k = 17)));
 };
 
-/////////////exo1 O(n2)
+//exo1
 const sum_1 = (array, k) => {
 	for (var i = 0; i < array.length; i++) {
 		for (var j = 1; j < array.length; j++) {
@@ -61,24 +61,24 @@ const sum_2 = (array) => {
 	);
 };
 
-// exo 3 O(n)
-// const sum_3 = (array, k) => {
-// 	array.sort((a, b) => a - b);
-// 	let left = 0;
-// 	let right = array.length - 1;
+// exo 3
+const sum_3 = (array, k) => {
+	array.sort((a, b) => a - b);
+	let left = 0;
+	let right = array.length - 1;
 
-// 	while (left < right) {
-// 		const sum = array[left] + array[right];
-// 		if (sum === k) {
-// 			return true;
-// 		} else if (sum < k) {
-// 			left += 1;
-// 		} else {
-// 			right -= 1;
-// 		}
-// 	}
-// 	return false;
-// };
+	while (left < right) {
+		const sum = array[left] + array[right];
+		if (sum === k) {
+			return true;
+		} else if (sum < k) {
+			left += 1;
+		} else {
+			right -= 1;
+		}
+	}
+	return false;
+};
 
 // exo 3 option b
 // function swap(arr, i1, i2) {
@@ -100,15 +100,15 @@ const sum_2 = (array) => {
 // }
 
 //exo5
-// function sum_5(array, k) {
-// 	let imax = array.length - 1;
-// 	let mid = k / 2;
-// 	let gap;
-// 	let hash_gap = {};
-// 	for (let cursor = 0; cursor <= imax; cursor++) {
-// 		gap = Math.abs(array[cursor] - mid);
-// 		if (hash_gap[gap]) return true;
-// 		else hash_gap[gap] = true;
-// 	}
-// 	return false;
-// }
+function sum_5(array, k) {
+	let imax = array.length - 1;
+	let mid = k / 2;
+	let gap;
+	let hash_gap = {};
+	for (let cursor = 0; cursor <= imax; cursor++) {
+		gap = Math.abs(array[cursor] - mid);
+		if (hash_gap[gap]) return true;
+		else hash_gap[gap] = true;
+	}
+	return false;
+}

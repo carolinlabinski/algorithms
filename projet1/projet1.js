@@ -38,7 +38,8 @@ const check = (IntArray) => {
 	);
 };
 
-/// liste de 6 nombres non-triée donne 6 comparaisons => O(n), liste non-trié 11 comparaisons O(n^2), liste longue non triés 2424 comparaisons O(n^2)
+/// liste de 6 nombres pas triée donne 6 comparaisons => O(n), liste non-triée donne 11 comparaisons O(n^2),
+//liste longue non triés 2424 comparaisons O(n^2)
 let bubbleSort = (IntArray) => {
 	let counter = 0;
 	let len = IntArray.length;
@@ -56,8 +57,8 @@ let bubbleSort = (IntArray) => {
 	console.log("Bubble sorted array:" + IntArray);
 	// return IntArray;
 };
-/// sorted array: 0 comparisons, unsorted short array: 11 comparaisons
-//100 numbers unsorted array: 2424 comparisons => so O(n^2) is true
+/// unsorted short array: 11 comparaisons
+//100 numbers unsorted array: 2424 comparisons => correspond à O(n^2)
 
 let intersectionSort = (IntArray) => {
 	let counter = 0;
@@ -76,7 +77,7 @@ let intersectionSort = (IntArray) => {
 	console.log("Intersection sorted array:" + IntArray);
 	return IntArray;
 };
-////
+//// liste de 100 nombres donne 198 comparaisons => 100 log(100)= 200, tri avec O notion de O(n log n)
 
 let counter = 0;
 let mergeSortTopDown = (IntArray) => {
